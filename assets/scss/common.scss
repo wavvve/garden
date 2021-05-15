@@ -295,12 +295,13 @@ b{
 						width: 100%;
 						display: inline-block;
 						position: relative;
-						background: $lineColor;
 						margin-bottom: 0.5rem;
+						font-size: 0;
 						img{
 							width: 100%;
 							filter: grayscale(100%);
 							border: 1px solid $lineColor;
+							box-sizing: border-box;
 						}
 					}
 					.title{
@@ -313,9 +314,13 @@ b{
 						line-height: 1.6rem;
 						margin-bottom: 0.5rem;
 					}
+					.publishedDate{
+						font-size: 0.7rem;
+						font-weight: 400;
+					}
 					height: 100%;
 					position: relative;
-					padding-bottom: 8rem;
+					padding-bottom: 5rem;
 					.category{
 						position: absolute;
 						bottom: 1rem;
@@ -352,7 +357,7 @@ b{
 		flex-direction: column;
 		justify-content: space-between;
 		.sns{
-			margin-bottom: 1.5rem;
+			margin-bottom: 1rem;
 			li{
 				display: inline-block;
 				margin-right: 1rem;
@@ -368,6 +373,7 @@ b{
 			font-size: 2rem;
 			margin-right: 3rem;
 			margin-top: 1rem;
+			margin-bottom: 1rem;
 		}
 		.copyright{
 			font-size: 0.6rem;

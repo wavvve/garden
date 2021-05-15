@@ -2,7 +2,7 @@
     <div class="footer top_line">
         <div class="info vertical_line">
             <ul class="sns">
-                <li><a href="https://www.instagram.com/wavvvvvvvvvvve/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.instagram.com/be_tofu_life/" target="_blank">Instagram</a></li>
                 <li><a href="https://github.com/wavvve" target="_blank">Github</a></li>
                 <li><a href="mailto:ppk1324@naver.com" target="_blank">Email</a></li>
             </ul>

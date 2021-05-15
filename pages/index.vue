@@ -7,60 +7,38 @@
     </article>
     -->
     <ul class="postWrap">
-      <li class="item">
+      <li class="item" v-for="item in postLists" v-bind:key="item">
         <div class="itemWrap">
-          <span class="imageBox">
-            <img src="http://placeimg.com/500/800/tech" alt="test img">
+          <span class="imageBox" v-if="item.thumbnailImg[0]">
+            <img :src="item.thumbnailImg[0].formats.small.url" :alt="item.thumbnailImg[0].name">
           </span>
-          <span class="title">Title</span>
-          <span class="contents">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc laoreet viverra sagittis. Vivamus eros tortor.
+          <span class="title" v-if="item.title">{{ item.title }}</span>
+          <span class="contents" v-if="item.contents">            
+            {{ item.contents }}
           </span>
-          <div class="category">
-            <span>Graphic design</span>
-            <span>Fiction</span>
-            <span>Develop</span>
+          <span class="publishedDate" v-if="item.publishingDate">
+            {{ item.publishingDate }}
+          </span>
+          <div class="category" v-if="item.categories">
+            <span v-for="category in item.categories" v-bind:key="category">{{ category.category }}</span>
           </div>
         </div>
       </li>
-      <li class="item">
-        <div class="itemWrap">
-          <span class="title">Title</span>
-          <span class="contents">            
-            무한한 이상의 뛰노는 청춘은 현저하게 얼마나 그러므로 황금시대다. 황금시대를 구하기 전인 않는 수 열락의 기관과 피가 피다. 오아이스도 동력은 있는 이 투명하되 피다. 동산에는 황금시대를 가치를 하였으며, 그들의 안고, 스며들어 것이다. 아니한 그러므로 같이, 듣는다. 공자는 그들의 든 용기가 이상의 보내는 뼈 수 그러므로 힘있다. 천자만홍이 용기가 같이 것이다. 같이 새가 못할 그들은 것이다. 얼마나 곳으로 꽃 쓸쓸하랴? 날카로우나 그들의 봄날의 것이다. 피가 천지는 열락의 피가 피어나기 눈에 어디 이상의 그들의 아름다우냐?
-          </span>
-          <div class="category">
-            <span>Graphic design</span>
-            <span>Fiction</span>
-            <span>Develop</span>
-          </div>
-        </div>
-      </li>
-      <li class="item">
-        <div class="itemWrap">
-          <span class="title">Project Gardener.</span>
-          <span class="contents">            
-            무한한 이상의 뛰노는 청춘은 현저하게 얼마나 그러므로 황금시대다. 황금시대를 구하기 전인 않는 수 열락의 기관과 피가 피다. 오아이스도 동력은 있는 이 투명하되 피다. 동산에는 황금시대를 가치를 하였으며, 그들의 안고, 스며들어 것이다. 아니한 그러므로 같이, 듣는다. 공자는 그들의 든 용기가 이상의 보내는 뼈 수 그러므로 힘있다. 천자만홍이 용기가 같이 것이다. 같이 새가 못할 그들은 것이다. 얼마나 곳으로 꽃 쓸쓸하랴? 날카로우나 그들의 봄날의 것이다. 피가 천지는 열락의 피가 피어나기 눈에 어디 이상의 그들의 아름다우냐?
-          </span>
-          <div class="category">
-            <span>Graphic design</span>
-            <span>Fiction</span>
-            <span>Develop</span>
-          </div>
-        </div>
-      </li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
     </ul>
   </div>
 </template>
 
 <script>
+    export default {
+    data() {
+      return {
+        postLists: []
+      }
+    },
+    async fetch() {
+      this.postLists = await fetch(
+        'https://api.design-garden.shop/posts'
+      ).then(res => res.json())
+    }
+  }
 </script>
