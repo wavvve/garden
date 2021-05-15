@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&display=swap');
+
+
+//////////////////// css 리셋
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+//////////////////// 리셋끝
+
+//////////////////// 공용세팅
+$lineColor: #7c8a80;
+$mainFontColor: #192d20;
+$subFontColor: #3a5845;
+$bgColor: #9ea7a1;
+$easeCustom: cubic-bezier(0.975, 0.105, 0.555, 0.975);
+html, body{
+    font-family: 'Noto Sans KR', sans-serif;
+	letter-spacing: -0.03rem;
+    font-weight: 300;
+    background: $bgColor;
+	font-size: 14px;
+	color: $mainFontColor;
+}
+a{
+	color: $mainFontColor;
+	padding-bottom: 0.3rem;
+	position: relative;
+	&::after{
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: $subFontColor;
+		transform: scaleX(0);
+		transition: all 0.3s $easeCustom;
+	}
+	&:hover::after{
+		transform: scaleX(1);
+	}
+}
+.title{
+    font-family: 'Advent Pro', sans-serif;
+}
+div{
+	box-sizing: border-box;
+}
+b{
+	font-weight: 700;
+}
+//////////////////// 공용세팅 끝
+//////////////////// 라인 애니메이션
+.bottom_line{
+	position: relative;
+	&::after{
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left:0;
+		width: 100%;
+		height: 1px;
+		background: $lineColor;
+		animation: horizon_appear 1s $easeCustom;
+	}
+}
+.top_line{
+	position: relative;
+	&::after{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left:0;
+		width: 100%;
+		height: 1px;
+		background: $lineColor;
+		transition: all 1s $easeCustom;
+		animation: horizon_appear 1s $easeCustom;
+	}
+}
+.vertical_line{
+	position: relative;
+	&::after{
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		right:0;
+		width: 1px;
+		height: 100%;
+		background: $lineColor;
+		transition: all 1s $easeCustom;
+		animation: vertical_appear 1s $easeCustom;
+	}
+}
+//////////////////// 라인 애니메이션 끝
+//////////////////// 헤더
+.header_nav{
+	padding:0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	z-index: 1000;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: $bgColor;
+		opacity: 0.9;
+	}
+	.header_menuBtn{
+		width: 8rem;
+		height: 8rem;
+		display: block;
+		position: relative;
+		cursor: pointer;
+		li{
+			position: absolute;
+			width: 3rem;
+			height: 2px;
+			background: $lineColor;
+			display: block;
+			left: 2.5rem;
+			transition: all 0.3s $easeCustom;
+			animation: 1s horizon_appear $easeCustom;
+			&:nth-child(1){
+				top: 3rem;
+			}
+			&:nth-child(2){
+				top: 4rem;
+			}
+			&:nth-child(3){
+				top: 5rem;
+			}
+		}
+		&:hover{
+			li{
+				&:nth-child(1){
+					top: 4rem;
+				}
+				&:nth-child(3){
+					top: 4rem;
+				}
+			}
+		}
+		&.active{
+			li{
+				&:nth-child(1){
+					top: 4rem;
+					transform: rotate(135deg);
+				}
+				&:nth-child(2){
+					opacity: 0;
+				}
+				&:nth-child(3){
+					top: 4rem;
+					transform: rotate(-135deg);
+				}
+			}
+		}
+		&::after{
+			content: '';
+			width: 1px;
+			height: 8rem;
+			position: absolute;
+			top:0;
+			left: 0;
+			display: block;
+			background: $lineColor;
+			animation: 1s vertical_appear $easeCustom;
+		}
+	}
+}
+#gardenLogo{
+	padding: 1rem;
+	height: 6rem;
+	animation: 1s left_appear $easeCustom;
+	g{
+		margin: auto;
+		.cls-1{
+			fill: $mainFontColor;
+		}
+	}
+}
+//////////////////// 메인 컨테이너
+.container{
+	padding:  8rem 0 0;
+	min-height: 100vh;
+	h1{
+		font-size: 10rem;
+		font-weight: 100;
+	}
+}
+//////////////////// 메인 컨테이너 끝
+//////////////////// 인덱스 컨테이너
+.container.indexPage{
+	.introPage{
+		width: 100%;
+		min-height: calc(100vh - 8rem);
+	}
+	.postWrap{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		li{
+			width: 10%;
+			min-width: 200px;
+			flex-grow: 1;
+			min-height: 300px;
+			position: relative;
+			box-sizing: border-box;
+			&::before{
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left:0;
+				width: 100%;
+				height: 1px;
+				background: $lineColor;
+				animation: horizon_appear 1s $easeCustom;
+			}
+			&::after{
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left:0;
+				width: 1px;
+				height: 100%;
+				background: $lineColor;
+				animation: vertical_appear 1s $easeCustom;
+			}
+			&.item{
+				.itemWrap{
+					padding: 1rem;
+					color: $subFontColor;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					.imageBox{
+						width: 100%;
+						display: inline-block;
+						position: relative;
+						background: $lineColor;
+						margin-bottom: 0.5rem;
+						img{
+							width: 100%;
+							filter: grayscale(100%);
+							border: 1px solid $lineColor;
+						}
+					}
+					.title{
+						font-size: 3rem;
+						color: $mainFontColor;
+						margin-bottom: 0.5rem;
+					}
+					.contents{
+						font-size: 1rem;
+						line-height: 1.6rem;
+						margin-bottom: 0.5rem;
+					}
+					height: 100%;
+					position: relative;
+					padding-bottom: 8rem;
+					.category{
+						position: absolute;
+						bottom: 1rem;
+						left: 1rem;
+						font-size: 0;
+						span{
+							display: inline-block;
+							font-size: 0.5rem;
+							font-weight: 700;
+							padding: 0.5rem;
+							border: 1px solid $lineColor;
+							margin-right: 0.2rem;
+							margin-top: 0.2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+//////////////////// 인덱스 컨테이너 끝
+//////////////////// 푸터
+.footer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: $subFontColor;
+	div{
+		padding : 1rem;
+		flex-grow: 1;
+	}
+	.info{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.sns{
+			margin-bottom: 1.5rem;
+			li{
+				display: inline-block;
+				margin-right: 1rem;
+				a{
+					text-decoration: none;
+					color: $subFontColor;
+					font-weight: 400;
+				}
+			}
+		}
+		.title{
+			font-weight: 700;
+			font-size: 2rem;
+			margin-right: 3rem;
+			margin-top: 1rem;
+		}
+		.copyright{
+			font-size: 0.6rem;
+			letter-spacing: 0;
+			font-weight: 400;
+		}
+	}
+	.essay{
+		max-width: 60%;
+		line-height: 1.4rem;
+		padding: 1rem;
+		padding: calc(1rem - 3px) 1rem;
+		padding-right: 5rem;
+	}
+	.slogan{
+		vertical-align: middle;
+		text-align: center;
+		line-height: 1.4rem;
+		position: relative;
+		padding : 3.8rem 1rem;
+		width: 16rem;
+		flex-grow: 0;
+		flex-basis: 16rem;
+		.graphic{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			span{
+				display: block;
+				position: absolute;
+				width: calc(100% - 4rem);
+				height: 3rem;
+				top: 2.2rem;
+				left: 2rem;
+				border: 1px solid $lineColor;
+				border-radius: calc(100% - 1rem) / 3rem;
+				&:nth-child(1){
+					animation: 1s circle_move_down infinite $easeCustom;
+				}
+				&:nth-child(2){
+					top: 3.7rem;
+				}
+				&:nth-child(3){
+					top: 5.2rem;
+					animation: 1s circle_move_up infinite $easeCustom;
+				}
+			}
+		}
+	}
+}
+//////////////////// 푸터 끝
+//////////////////// 애니메이션 키프레임
+@keyframes appear {
+	0% {
+	  opacity: 0;
+	}
+}
+@keyframes horizon_appear {
+	0% {
+		transform: scaleX(0);
+	}
+}
+@keyframes vertical_appear {
+	0% {
+		transform: scaleY(0);
+	}
+}
+@keyframes left_appear {
+	0% {
+		transform: translateX(-2rem);
+	}
+}
+@keyframes right_appear {
+	0% {
+		transform: translateX(2rem);
+	}
+}
+@keyframes circle_move_down {
+	0%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(-1rem);
+		opacity: 0.5;
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+
+@keyframes circle_move_up {
+	0%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(1rem);
+		opacity: 0.5;
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
