@@ -33,7 +33,7 @@
     data() {
       return {
         postLists: [],
-        apiSeverUrl: "http://api.design-garden.shop",
+        apiSeverUrl: "https://api.design-garden.shop",
       }
     },
     async fetch() {
