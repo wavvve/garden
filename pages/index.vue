@@ -7,10 +7,10 @@
     </article>
     -->
     <ul class="postWrap">
-      <li class="item" v-for="item in postLists" v-bind:key="item">
+      <li class="item" v-for="item in postLists" v-bind:key="item.id">
         <div class="itemWrap">
           <span class="imageBox" v-if="item.thumbnailImg[0]">
-            <img :src="'http://api.design-garden.shop'+item.thumbnailImg[0].formats.small.url" :alt="item.thumbnailImg[0].name">
+            <img :src="apiSeverUrl + item.thumbnailImg[0].formats.small.url" :alt="item.thumbnailImg[0].name">
           </span>
           <span class="title" v-if="item.title">{{ item.title }}</span>
           <span class="contents" v-if="item.contents">            
@@ -20,7 +20,7 @@
             {{ item.publishingDate }}
           </span>
           <div class="category" v-if="item.categories">
-            <span v-for="category in item.categories" v-bind:key="category">{{ category.category }}</span>
+            <span v-for="category in item.categories" v-bind:key="category.id">{{ category.category }}</span>
           </div>
         </div>
       </li>
@@ -32,7 +32,8 @@
     export default {
     data() {
       return {
-        postLists: []
+        postLists: [],
+        apiSeverUrl: "http://api.design-garden.shop",
       }
     },
     async fetch() {
