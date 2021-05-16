@@ -10,7 +10,7 @@
       <li class="item" v-for="item in postLists" v-bind:key="item">
         <div class="itemWrap">
           <span class="imageBox" v-if="item.thumbnailImg[0]">
-            <img :src="item.thumbnailImg[0].formats.small.url" :alt="item.thumbnailImg[0].name">
+            <img :src="'https://api.design-garden.shop' + item.thumbnailImg[0].formats.small.url" :alt="item.thumbnailImg[0].name">
           </span>
           <span class="title" v-if="item.title">{{ item.title }}</span>
           <span class="contents" v-if="item.contents">            
