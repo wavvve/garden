@@ -1,7 +1,7 @@
 <template>
     <div class="header_nav bottom_line">
         <div class="header_logo">
-            <Logo />
+            <Logo v-on:click.native="logoBtn" />
         </div>
         <ul 
             v-on:click="menuBtn" 
@@ -37,7 +37,10 @@ export default {
     methods : {
         menuBtn : function(){
             this.modalMenuState = !this.modalMenuState;
-        }
+        },
+        logoBtn : function(){
+            this.modalMenuState = false;
+        },
     }
 }
 </script>

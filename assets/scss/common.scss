@@ -239,12 +239,17 @@ b{
 		&.open{
 			opacity: 1;
 			pointer-events: all;
-			background: rgba(158,167,161,0.8);
+			background: rgba(158,167,161,0.9);
 			.mainMenu{
 				li{
 					a{
 						transform:translateX(0) ;
 						opacity: 1;
+						&:hover{
+							transition-delay: 0;
+							transform: translate(-1rem, -1rem);
+							letter-spacing: 0.5rem;
+						}
 					}
 				}
 			}
@@ -258,8 +263,9 @@ b{
 			li{
 				padding: 0.5rem;
 				font-weight: 900;
+				font-family: 'Advent Pro', sans-serif;
+				letter-spacing: -0.1rem;
 				font-size: 5rem;
-				overflow: hidden;
 				a{
 					text-decoration: none;
 					color:$mainFontColor;
