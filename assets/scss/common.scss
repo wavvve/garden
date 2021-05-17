@@ -62,7 +62,7 @@ html, body{
 	font-size: 14px;
 	color: $mainFontColor;
 }
-a{
+a.hoverLine{
 	color: $mainFontColor;
 	padding-bottom: 0.3rem;
 	position: relative;
@@ -332,7 +332,7 @@ b{
 						font-size: 0;
 						span{
 							display: inline-block;
-							font-size: 0.5rem;
+							font-size: 0.8rem;
 							font-weight: 700;
 							padding: 0.5rem;
 							border: 1px solid $lineColor;
@@ -368,7 +368,7 @@ b{
 				a{
 					text-decoration: none;
 					color: $subFontColor;
-					font-weight: 400;
+					font-weight: 700;
 				}
 			}
 		}
@@ -391,6 +391,9 @@ b{
 		padding: 1rem;
 		padding: calc(1rem - 3px) 1rem;
 		padding-right: 5rem;
+		b{
+			margin-right: 3rem;
+		}
 	}
 	.slogan{
 		vertical-align: middle;
@@ -486,7 +489,7 @@ b{
 //////////////////// 모바일 시작
 .mobile{
 	.header_nav{
-		font-size: 11px;
+		font-size: 10px;
 		.header_logo{
 			#gardenLogo{
 				height: 8em;
@@ -495,7 +498,7 @@ b{
 		}
 	}
 	.container{
-		padding: 6.3rem 0 0;
+		padding: 5.7rem 0 0;
 		width: 100%;
 	}
 	.footer{

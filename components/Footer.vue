@@ -2,9 +2,9 @@
     <div class="footer top_line">
         <div class="info" :class="{ vertical_line:$device.isDesktop, bottom_line:$device.isMobile }">
             <ul class="sns">
-                <li><a href="https://www.instagram.com/be_tofu_life/" target="_blank">Instagram</a></li>
-                <li><a href="https://github.com/wavvve" target="_blank">Github</a></li>
-                <li><a href="mailto:ppk1324@naver.com" target="_blank">Email</a></li>
+                <li><a class="hoverLine" href="https://www.instagram.com/be_tofu_life/" target="_blank">Instagram</a></li>
+                <li><a class="hoverLine" href="https://github.com/wavvve" target="_blank">Github</a></li>
+                <li><a class="hoverLine" href="mailto:ppk1324@naver.com" target="_blank">Email</a></li>
             </ul>
             
             <span class="title">Design GARDEN</span>
@@ -12,7 +12,18 @@
         </div>
         <div class="essay" :class="{ bottom_line:$device.isMobile }">
             <span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc laoreet viverra sagittis. Vivamus eros tortor, mattis ac dignissim ut, egestas eu ex. Duis dapibus felis nec vehicula lobortis. Sed id laoreet enim, vel porta nunc. Ut quam mi, mattis sed maximus vitae, iaculis sed mi. Morbi pharetra rutrum ultricies. Nam sit amet purus vulputate, tincidunt sapien a, molestie mi. Aenean et volutpat neque. Phasellus euismod massa risus, vitae elementum nisl dapibus eget. Donec in mi ut turpis consequat feugiat sed et diam.
+                <b>Slow glow in GARDEN.</b>
+                가치를 발견하고 시선을 그것으로 돌리는 것이 자연스럽습니다.
+                그 흐름을 만들어가기 위해 천천히 둘러보려 합니다. 인상, 기술, 직관들
+                속에서 새롭게 피어나는 가치들을 발견하고 가꾸는 것을 멈추지 않는다면
+                느리게 보고 깊히 느낄 수 있습니다. 모든 것이 빠르게 지나가는 지금,
+                멈춰진 듯 그 자리에 있는 것들, 나중에서야 발견하게 되는 것들,
+                달리 볼 수 있었던 것들을 저희가 먼저 돌보고 있겠습니다.
+                작은 정원 속의 기품있는 발걸음이 당신을 위해 기다리고 있습니다.
+                <b>Do not stop</b>
+                다양한 가치의 표현을 위해 컨셉 디자인, 사용자경험, 출판의 길을
+                걸어가고 있습니다. 가치처럼 펼쳐진 경험들이 가르키는 그 방향이
+                여러분에게 새로운 관점으로 전달되기 위해 그 걸음을 멈추지 않습니다.
             </span>
         </div>
         <div class="slogan">

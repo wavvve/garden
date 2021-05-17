@@ -25,21 +25,26 @@
         </div>
       </li>
     </ul>
+    <Slogan :sloganText="sloganMessage" />
   </div>
 </template>
 
 <script>
-    export default {
-    data() {
-      return {
-        postLists: [],
-        apiSeverUrl: "https://api.design-garden.shop",
-      }
-    },
-    async fetch() {
-      this.postLists = await fetch(
-        'https://api.design-garden.shop/posts'
-      ).then(res => res.json())
+import Slogan from '../components/Slogan.vue'
+
+export default {
+  components: { Slogan },
+  data() {
+    return {
+      postLists: [],
+      apiSeverUrl: "https://api.design-garden.shop",
+      sloganMessage: "Slow walk, Glow work.",
     }
+  },
+  async fetch() {
+    this.postLists = await fetch(
+      'https://api.design-garden.shop/posts'
+    ).then(res => res.json())
   }
+}
 </script>
