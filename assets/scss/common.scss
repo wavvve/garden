@@ -84,6 +84,7 @@ a.hoverLine{
 }
 .title{
     font-family: 'Advent Pro', sans-serif;
+	letter-spacing: -0.1rem;
 }
 div{
 	box-sizing: border-box;
@@ -231,7 +232,7 @@ b{
 		background: rgba(158,167,161,0);
 		opacity: 0;
 		pointer-events: none;
-		transition: all 0.3s $easeCustom;
+		transition: all 0.5s $easeCustom;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -239,6 +240,14 @@ b{
 			opacity: 1;
 			pointer-events: all;
 			background: rgba(158,167,161,0.8);
+			.mainMenu{
+				li{
+					a{
+						transform:translateX(0) ;
+						opacity: 1;
+					}
+				}
+			}
 		}
 		.mainMenu{
 			width: 25rem;
@@ -250,9 +259,21 @@ b{
 				padding: 0.5rem;
 				font-weight: 900;
 				font-size: 5rem;
+				overflow: hidden;
 				a{
 					text-decoration: none;
 					color:$mainFontColor;
+					transform:translateX(3rem);
+					opacity: 0;
+					transition: all 0.3s $easeCustom;
+					display: inline-block;
+				}
+				@for $i from 1 through 6{
+					&:nth-child(#{$i}){
+						a{
+							transition-delay: 0.1s * $i;
+						}
+					}
 				}
 			}
 		}
@@ -403,6 +424,7 @@ b{
 			li{
 				display: inline-block;
 				margin-right: 1rem;
+				margin-bottom: 1rem;
 				a{
 					text-decoration: none;
 					color: $subFontColor;
@@ -414,8 +436,8 @@ b{
 			font-weight: 700;
 			font-size: 2rem;
 			margin-right: 3rem;
-			margin-top: 1rem;
-			margin-bottom: 1rem;
+			margin-top: 3rem;
+			margin-bottom: 0.5rem;
 		}
 		.copyright{
 			font-size: 0.6rem;
@@ -429,8 +451,15 @@ b{
 		padding: 1rem;
 		padding: calc(1rem - 3px) 1rem;
 		padding-right: 5rem;
+		line-height: 1.5rem;
+		letter-spacing: -0.03rem;
+		font-size: 0.8rem;
 		b{
 			margin-right: 3rem;
+			margin-left: 3rem;
+			&:first-child{
+				margin-left: 0;
+			}
 		}
 	}
 	.slogan{
@@ -532,6 +561,11 @@ b{
 			#gardenLogo{
 				height: 8em;
 				box-sizing: border-box;
+			}
+		}
+		.modalMenu{
+			li{
+				font-size: 4rem;
 			}
 		}
 	}
