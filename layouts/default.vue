@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout" :class="{ mobile:$device.isMobile }">
     <Header />
     <Nuxt />
     <Footer />

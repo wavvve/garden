@@ -14,10 +14,14 @@
     "core-js": "^3.9.1",
     "node-sass": "^4.14.0",
     "nuxt": "^2.15.6",
+<<<<<<< HEAD
     "webpack": "4.36"
+=======
+    "webpack": "^4.46.0"
+>>>>>>> 4f60dcdc439941c0a5b0a888367415ba835bd920
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
-    "sass-loader": "^7.3.1"
+    "sass-loader": "^10.1.1"
   }
 }

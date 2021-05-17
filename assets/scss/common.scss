@@ -62,7 +62,7 @@ html, body{
 	font-size: 14px;
 	color: $mainFontColor;
 }
-a{
+a.hoverLine{
 	color: $mainFontColor;
 	padding-bottom: 0.3rem;
 	position: relative;
@@ -149,6 +149,7 @@ b{
 	flex-direction: row;
 	justify-content: space-between;
 	z-index: 1000;
+	font-size: 1rem;
 	&::before{
 		content: '';
 		position: absolute;
@@ -161,51 +162,51 @@ b{
 		opacity: 0.9;
 	}
 	.header_menuBtn{
-		width: 8rem;
-		height: 8rem;
+		width: 8em;
+		height: 8em;
 		display: block;
 		position: relative;
 		cursor: pointer;
 		li{
 			position: absolute;
-			width: 3rem;
+			width: 3em;
 			height: 2px;
 			background: $lineColor;
 			display: block;
-			left: 2.5rem;
+			left: 2.5em;
 			transition: all 0.3s $easeCustom;
 			animation: 1s horizon_appear $easeCustom;
 			&:nth-child(1){
-				top: 3rem;
+				top: 3em;
 			}
 			&:nth-child(2){
-				top: 4rem;
+				top: 4em;
 			}
 			&:nth-child(3){
-				top: 5rem;
+				top: 5em;
 			}
 		}
 		&:hover{
 			li{
 				&:nth-child(1){
-					top: 4rem;
+					top: 4em;
 				}
 				&:nth-child(3){
-					top: 4rem;
+					top: 4em;
 				}
 			}
 		}
 		&.active{
 			li{
 				&:nth-child(1){
-					top: 4rem;
+					top: 4em;
 					transform: rotate(135deg);
 				}
 				&:nth-child(2){
 					opacity: 0;
 				}
 				&:nth-child(3){
-					top: 4rem;
+					top: 4em;
 					transform: rotate(-135deg);
 				}
 			}
@@ -213,7 +214,7 @@ b{
 		&::after{
 			content: '';
 			width: 1px;
-			height: 8rem;
+			height: 8em;
 			position: absolute;
 			top:0;
 			left: 0;
@@ -221,6 +222,12 @@ b{
 			background: $lineColor;
 			animation: 1s vertical_appear $easeCustom;
 		}
+	}
+	.modalMenu{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		padding: 8em 0 0;
 	}
 }
 #gardenLogo{
@@ -290,29 +297,36 @@ b{
 					color: $subFontColor;
 					display: flex;
 					flex-direction: column;
-					justify-content: space-between;
 					.imageBox{
 						width: 100%;
 						display: inline-block;
 						position: relative;
-						margin-bottom: 0.5rem;
+						margin-bottom: 1rem;
 						font-size: 0;
+						overflow: hidden;
 						img{
 							width: 100%;
 							filter: grayscale(100%);
+							opacity: 0.8;
 							border: 1px solid $lineColor;
 							box-sizing: border-box;
+							transition: all 0.5s $easeCustom;
+							&:hover{
+								filter: grayscale(0);
+								opacity: 1;
+								transform: scale(1.1);
+							}
 						}
 					}
 					.title{
 						font-size: 3rem;
 						color: $mainFontColor;
-						margin-bottom: 0.5rem;
+						margin-bottom: 1rem;
 					}
 					.contents{
 						font-size: 1rem;
 						line-height: 1.6rem;
-						margin-bottom: 0.5rem;
+						margin-bottom: 1rem;
 					}
 					.publishedDate{
 						font-size: 0.7rem;
@@ -328,7 +342,7 @@ b{
 						font-size: 0;
 						span{
 							display: inline-block;
-							font-size: 0.5rem;
+							font-size: 0.8rem;
 							font-weight: 700;
 							padding: 0.5rem;
 							border: 1px solid $lineColor;
@@ -364,7 +378,7 @@ b{
 				a{
 					text-decoration: none;
 					color: $subFontColor;
-					font-weight: 400;
+					font-weight: 700;
 				}
 			}
 		}
@@ -387,6 +401,9 @@ b{
 		padding: 1rem;
 		padding: calc(1rem - 3px) 1rem;
 		padding-right: 5rem;
+		b{
+			margin-right: 3rem;
+		}
 	}
 	.slogan{
 		vertical-align: middle;
@@ -478,3 +495,50 @@ b{
 		transform: translateY(0);
 	}
 }
+//////////////////// 애니메이션 키프레임 끝
+//////////////////// 모바일 시작
+.mobile{
+	.header_nav{
+		font-size: 10px;
+		.header_logo{
+			#gardenLogo{
+				height: 8em;
+				box-sizing: border-box;
+			}
+		}
+	}
+	.container.indexPage {
+		padding: 5.7rem 0 0;
+		width: 100%;
+		.postWrap{
+			.item{
+				.itemWrap{
+					padding: 2rem 1rem;
+					padding-bottom: 6rem;
+					.category{
+						bottom: 2rem;
+					}
+					&:first-child{
+						padding-top: 1rem;
+					}
+				}
+			}
+		}
+	}
+	.footer{
+		flex-direction: column;
+		.info{
+			padding: 2rem 1rem;
+		}
+		.essay{
+			max-width: 100%;
+			padding: 2rem 1rem;
+		}
+		.slogan{
+			width: 100%;
+			flex-basis: auto;
+			padding: auto;
+		}
+	}
+}
+//////////////////// 모바일 시작 끝
