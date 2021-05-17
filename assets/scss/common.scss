@@ -223,6 +223,12 @@ b{
 			animation: 1s vertical_appear $easeCustom;
 		}
 	}
+	.modalMenu{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		padding: 8em 0 0;
+	}
 }
 #gardenLogo{
 	padding: 1rem;
@@ -297,14 +303,18 @@ b{
 						position: relative;
 						margin-bottom: 1rem;
 						font-size: 0;
+						overflow: hidden;
 						img{
 							width: 100%;
 							filter: grayscale(100%);
+							opacity: 0.8;
 							border: 1px solid $lineColor;
 							box-sizing: border-box;
 							transition: all 0.5s $easeCustom;
 							&:hover{
 								filter: grayscale(0);
+								opacity: 1;
+								transform: scale(1.1);
 							}
 						}
 					}
@@ -497,19 +507,37 @@ b{
 			}
 		}
 	}
-	.container{
+	.container.indexPage {
 		padding: 5.7rem 0 0;
 		width: 100%;
+		.postWrap{
+			.item{
+				.itemWrap{
+					padding: 2rem 1rem;
+					padding-bottom: 6rem;
+					.category{
+						bottom: 2rem;
+					}
+					&:first-child{
+						padding-top: 1rem;
+					}
+				}
+			}
+		}
 	}
 	.footer{
 		flex-direction: column;
+		.info{
+			padding: 2rem 1rem;
+		}
 		.essay{
 			max-width: 100%;
-			padding: 1rem;
+			padding: 2rem 1rem;
 		}
 		.slogan{
 			width: 100%;
 			flex-basis: auto;
+			padding: auto;
 		}
 	}
 }

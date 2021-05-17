@@ -24,7 +24,7 @@ export default {
         position: relative;
         width: 100vw;
         max-width: 100%;
-        height: 9rem;
+        height: 11rem;
         overflow-x: hidden;
     }
     .track {
@@ -37,7 +37,7 @@ export default {
         font-family: 'Advent Pro', sans-serif;
         font-size: 7rem;
         font-weight: 100;
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 
     @keyframes marquee {
