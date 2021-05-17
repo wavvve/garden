@@ -12,10 +12,15 @@
             <li></li>
             <li></li>
         </ul>
-        <div class="modalMenu" v-if="modalMenuState">
-            <ul>
-                <li>
-                </li>
+        <div 
+            class="modalMenu"
+            v-bind:class="{ open:modalMenuState }"
+        >
+            <ul class="mainMenu">
+                <li><nuxt-link v-on:click.native="menuBtn" to="/about">About</nuxt-link></li>                
+                <li><nuxt-link v-on:click.native="menuBtn" to="/works">Works</nuxt-link></li>                
+                <li><nuxt-link v-on:click.native="menuBtn" to="/gardener">Gardener</nuxt-link></li>                
+                <li><nuxt-link v-on:click.native="menuBtn" to="/contact">Contact</nuxt-link></li>                
             </ul>
         </div>
     </div>
@@ -31,7 +36,7 @@ export default {
     },
     methods : {
         menuBtn : function(){
-            this.modalMenuState=!this.modalMenuState;
+            this.modalMenuState = !this.modalMenuState;
         }
     }
 }
