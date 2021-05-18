@@ -10,7 +10,7 @@
             <span class="title">Design GARDEN</span>
             <span class="copyright">ⓒ DesignGARDEN. All rights reserved.</span>
         </div>
-        <div class="essay" :class="{ bottom_line:$device.isMobile }">
+        <div class="essay" :class="{ vertical_line:$device.isDesktop, bottom_line:$device.isMobile }">
             <span>
                 <b>Slow glow in GARDEN.</b>
                 가치를 발견하고 시선을 그것으로 돌리는 것이 자연스럽습니다.

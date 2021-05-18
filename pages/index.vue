@@ -48,7 +48,7 @@ export default {
   methods: {
     handleNewLine(str) {    
        return String(str).replace(/(?:\r\n|\r|\n)/g, "<br>");
-    }
+    },
   },
 }
 </script>
