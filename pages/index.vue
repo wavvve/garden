@@ -18,9 +18,9 @@
           <span class="publishedDate" v-if="item.publishingDate">
             {{ item.publishingDate }}
           </span>
-          <div class="category" v-if="item.categories">
+          <span class="category" v-if="item.categories">
             <span v-for="category in item.categories" v-bind:key="category.id">{{ category.category }}</span>
-          </div>
+          </span>
         </div>
       </li>
     </ul>
@@ -49,6 +49,6 @@ export default {
     handleNewLine(str) {    
        return String(str).replace(/(?:\r\n|\r|\n)/g, "<br>");
     }
-  }
+  },
 }
 </script>
