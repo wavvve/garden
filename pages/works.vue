@@ -32,6 +32,7 @@ export default {
       postLists: [],
       apiSeverUrl: "https://api.design-garden.shop",
       sloganMessage: "Slow walk, Glow work.",
+      title: 'Garden ::: Works'
     }
   },
   async fetch() {
@@ -43,6 +44,18 @@ export default {
     handleNewLine(str) {    
        return String(str).replace(/(?:\r\n|\r|\n)/g, "<br>");
     },
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+          {
+          hid: 'description',
+          name: 'description',
+          content: 'Garden grass'
+          }
+      ]
+    }
   },
 }
 </script>

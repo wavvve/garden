@@ -754,6 +754,10 @@ b{
 			width: 100%;
 			flex-basis: auto;
 			padding: auto;
+			&>span{
+				padding: 4rem;
+				margin-top: 0;
+			}
 		}
 	}
 }

@@ -8,7 +8,14 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Graphic design studio' },
+      { hid: 'og:description', name: 'og:description', content: 'Graphic design studio' },
+      { hid: 'og:title', name: 'og:title', content: 'Design GARDEN' },
+      { hid: 'og:url', name: 'og:url', content: 'https://www.design-garden.co.kr' },
+      { hid: 'og:locale', name: 'og:locale', content: 'ko_kr' },
+      { hid: 'og:type', name: 'og:type', content: 'Website' },
+      //{ hid: 'og:image:width', name: 'og:image:width', content: 'ko_kr' },
+      //{ hid: 'og:image:height', name: 'og:image:height', content: 'ko_kr' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
