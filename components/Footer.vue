@@ -26,8 +26,10 @@
             </span>
         </div>
         <div class="slogan">
-            Slow, Grow,<br>
-            Do not stop.
+            <span>
+                Slow, Grow,<br>
+                Do not stop.
+            </span>
             <div class="graphic">
                 <span></span>
                 <span></span>

@@ -15,6 +15,7 @@
         <div 
             class="modalMenu"
             v-bind:class="{ open:modalMenuState }"
+            v-on:click="logoBtn"
         >
             <ul class="mainMenu">
                 <li><nuxt-link v-on:click.native="menuBtn" to="/about">About</nuxt-link></li>                

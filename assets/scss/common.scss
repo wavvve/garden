@@ -272,7 +272,7 @@ b{
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			height: calc(100vh - 8em);
+			height: 100%;
 			li{
 				padding: 0.5rem;
 				font-weight: 900;
@@ -389,11 +389,14 @@ b{
 	}
 }
 //////////////////// 메인 컨테이너 끝
-//////////////////// 인덱스 컨테이너
-.container.indexPage{
+//////////////////// 인덱스 컨테이너 // 워크랩 공용
+.container{
+	min-height: calc(100vh - 8em);
+}
+.container.indexPage, .container.worksWrap{
 	.introPage{
 		width: 100%;
-		min-height: calc(100vh - 8rem);
+		min-height: calc(100vh - 8em);
 	}
 	.postWrap{
 		display: flex;
@@ -517,6 +520,18 @@ b{
 	}
 }
 //////////////////// 인덱스 컨테이너 끝
+//////////////////// 어바웃 컨테이너
+.container.aboutWrap{
+}
+//////////////////// 어바웃 컨테이너 끝
+//////////////////// 가드너 컨테이너
+.container.gardenerWrap{
+}
+//////////////////// 가드너 컨테이너 끝
+//////////////////// 컨택트 컨테이너
+.container.contactWrap{
+}
+//////////////////// 컨택트 컨테이너 끝
 //////////////////// 로딩 애니메이션
 .loading{
 	.container.indexPage .postWrap .item .itemWrap span{
@@ -570,7 +585,6 @@ b{
 	}
 	.essay{
 		max-width: 60%;
-		line-height: 1.4rem;
 		padding: 1rem;
 		padding: calc(1rem - 3px) 1rem;
 		padding-right: 5rem;
@@ -586,17 +600,19 @@ b{
 		}
 	}
 	.slogan{
-		vertical-align: middle;
 		text-align: center;
-		line-height: 1.4rem;
+		line-height: 1.1rem;
 		position: relative;
-		padding : 3.8rem 1rem;
 		width: 16rem;
 		flex-grow: 0;
 		flex-basis: 16rem;
 		opacity: 1;
 		transition: all 0.3s $easeCustom;
 		transition-delay: 1s;
+		&>span{
+			margin-top: calc(50% - 3.5rem);
+			display: inline-block;
+		}
 		.graphic{
 			position: absolute;
 			top: 0;
@@ -607,19 +623,21 @@ b{
 				display: block;
 				position: absolute;
 				width: calc(100% - 4rem);
-				height: 3rem;
-				top: 2.2rem;
+				height: 30%;
 				left: 2rem;
 				border: 1px solid $lineColor;
-				border-radius: calc(100% - 1rem) / 3rem;
+				border-radius: calc(100% - 1rem) / 3.5rem;
+				box-sizing: border-box;
 				&:nth-child(1){
+					top: calc(35% - 1.5rem);
 					animation: 1s circle_move_down infinite $easeCustom;
 				}
 				&:nth-child(2){
-					top: 3.7rem;
+					border: 2px solid $lineColor;
+					top: 35%;
 				}
 				&:nth-child(3){
-					top: 5.2rem;
+					top: calc(35% + 1.5rem);
 					animation: 1s circle_move_up infinite $easeCustom;
 				}
 			}

@@ -1,5 +1,5 @@
 <template>
-    <div class="gardenerWrap">
+    <div class="container gardenerWrap">
         Gardener
     </div>
 </template>

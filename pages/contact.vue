@@ -1,5 +1,5 @@
 <template>
-    <div class="contactWrap">
+    <div class="container contactWrap">
         Contact
     </div>
 </template>

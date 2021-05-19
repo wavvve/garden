@@ -1,5 +1,5 @@
 <template>
-    <div class="aboutWrap">
+    <div class="container aboutWrap">
         About
     </div>
 </template>
