@@ -50,6 +50,7 @@ table {
 
 //////////////////// 공용세팅
 $lineColor: #8a978e;
+$iconColor: #78867c;
 $mainFontColor: #192d20;
 $subFontColor: #3a5845;
 $bgColor: #9ea7a1;
@@ -172,7 +173,7 @@ b{
 			position: absolute;
 			width: 3em;
 			height: 2px;
-			background: $lineColor;
+			background: $iconColor;
 			display: block;
 			left: 2.5em;
 			transition: all 0.3s $easeCustom;
@@ -609,9 +610,13 @@ b{
 		opacity: 1;
 		transition: all 0.3s $easeCustom;
 		transition-delay: 1s;
-		&>span{
-			margin-top: calc(50% - 3.5rem);
-			display: inline-block;
+		min-height: 10rem;
+		.copyText{
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 50%;
+			margin-top: -1.1rem;
 		}
 		.graphic{
 			position: absolute;
@@ -760,9 +765,7 @@ b{
 			width: 100%;
 			flex-basis: auto;
 			padding: auto;
-			&>span{
-				padding: 4rem;
-				margin-top: 0;
+			.copyText{
 			}
 		}
 	}

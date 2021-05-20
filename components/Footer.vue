@@ -26,7 +26,7 @@
             </span>
         </div>
         <div class="slogan">
-            <span>
+            <span class="copyText">
                 Slow, Grow,<br>
                 Do not stop.
             </span>
