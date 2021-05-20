@@ -7,14 +7,13 @@
     </article>
     -->
     <ul class="postWrap">
-      <li class="item" v-for="item in postLists" v-bind:key="item.id">
+      <li class="item" v-for="item in orderedPostLists" v-bind:key="item.id">
         <div class="itemWrap">
           <span class="imageBox" v-if="item.thumbnailImg[0]">
             <img :src="apiSeverUrl + item.thumbnailImg[0].formats.medium.url" :alt="item.thumbnailImg[0].name">
           </span>
           <span class="title" v-if="item.title">{{ item.title }}</span>
-          <span class="contents" v-if="item.contents" v-html="handleNewLine(item.contents)">            
-          </span>
+          <span class="contents" v-if="item.contents" v-html="handleNewLine(item.contents)"></span>
           <span class="publishedDate" v-if="item.publishingDate">
             {{ item.publishingDate }}
           </span>
@@ -49,6 +48,11 @@ export default {
     handleNewLine(str) {    
        return String(str).replace(/(?:\r\n|\r|\n)/g, "<br>");
     },
+  },
+  computed: {
+      orderedPostLists: function () {
+          return _.orderBy(this.postLists, 'title')
+      }
   },
 }
 </script>

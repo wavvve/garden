@@ -1,6 +1,14 @@
 <template>
     <div class="container aboutWrap">
-        About
+        <div class="aboutColm vertical_line">
+
+        </div>
+        <div class="historyColm">
+            <ul class="itemWrap bottom_line" v-for="item in orderedhistory" v-bind:key="item.id">
+                <li class="date" >{{  item.date }}</li>
+                <li class="contents" v-html="handleNewLine(item.content)"></li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -22,7 +30,22 @@ export default {
             }
         ]
         }
-    }
+    },
+    async asyncData({ $http }) {
+      const gardenHistory = await $http.$get(`https://api.design-garden.shop/histories`)
+      console.log(gardenHistory)
+      return { gardenHistory }
+    },
+    methods: {
+        handleNewLine(str) {    
+        return String(str).replace(/(?:\r\n|\r|\n)/g, "<hr>");
+        },
+    },
+    computed: {
+        orderedhistory: function () {
+            return _.orderBy(this.gardenHistory, 'id').reverse()
+        }
+    },
 }
 </script>
 

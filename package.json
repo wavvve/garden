@@ -9,12 +9,15 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxt/http": "^0.6.4",
     "@nuxtjs/device": "^2.1.0",
     "circletype": "^2.3.0",
     "core-js": "^3.9.1",
+    "lodash": "^4.17.21",
     "node-sass": "^4.14.0",
     "nuxt": "^2.15.6",
     "vue-gtag": "^1.16.1",
+    "vue-lodash": "^2.1.2",
     "webpack": "^4.46.0"
   },
   "devDependencies": {

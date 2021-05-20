@@ -2,6 +2,16 @@
 asyncData : 로드전 호출되어 컴포넌트의 Data와 병합되어 출력.
 자동화 레퍼문서 : https://day0404.tistory.com/22
 
-api는 axios 써보자
+npm install @nuxt/http
+npm install --save vue-lodash lodash
 
-꿀팁 : http://ccambo.github.io/Dev/Nuxt/5.nuxt-tips/
+str api
+Example
+#Sort users by email.
+ASC: GET /users?_sort=email:ASC
+DESC: GET /users?_sort=email:DESC
+#Sorting on multiple fields
+GET /users?_sort=email:asc,dateField:desc
+GET /users?_sort=email:DESC,username:ASC
+
+정렬기능 만들기
