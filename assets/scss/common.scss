@@ -49,7 +49,7 @@ table {
 //////////////////// 리셋끝
 
 //////////////////// 공용세팅
-$lineColor: #7c8a80;
+$lineColor: #8a978e;
 $mainFontColor: #192d20;
 $subFontColor: #3a5845;
 $bgColor: #9ea7a1;
@@ -721,7 +721,7 @@ b{
 			}
 		}
 	}
-	.container.indexPage {
+	.container.indexPage, .container.worksWrap{
 		padding: 5.7rem 0 0;
 		width: 100%;
 		min-height: calc(100vh - 5.7rem);
@@ -745,6 +745,12 @@ b{
 		flex-direction: column;
 		.info{
 			padding: 2rem 1rem;
+			.sns{
+				margin-bottom: 0;
+			}
+			.title{
+				margin-top: 0;
+			}
 		}
 		.essay{
 			max-width: 100%;

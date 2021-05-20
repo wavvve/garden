@@ -14,8 +14,9 @@ export default {
       { hid: 'og:url', name: 'og:url', content: 'https://www.design-garden.co.kr' },
       { hid: 'og:locale', name: 'og:locale', content: 'ko_kr' },
       { hid: 'og:type', name: 'og:type', content: 'Website' },
-      //{ hid: 'og:image:width', name: 'og:image:width', content: 'ko_kr' },
-      //{ hid: 'og:image:height', name: 'og:image:height', content: 'ko_kr' },
+      { hid: 'og:image', name: 'og:image', content: '/garden-og-image.jpg' },
+      { hid: 'og:image:width', name: 'og:image:width', content: '800' },
+      { hid: 'og:image:height', name: 'og:image:height', content: '800' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
