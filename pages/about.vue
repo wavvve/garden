@@ -1,7 +1,7 @@
 <template>
     <div class="container aboutWrap">
         <div class="aboutColm vertical_line">
-
+            어바웃 그래픽을 어떻게 할까요.
         </div>
         <div class="historyColm">
             <ul class="itemWrap bottom_line" v-for="item in orderedhistory" v-bind:key="item.id">
