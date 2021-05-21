@@ -252,6 +252,9 @@ b{
 					}
 					a.nuxt-link-active{
 						color: #7c8a80;
+						&::after{
+							background: #7c8a80;
+						}
 					}
 					&:last-child{
 						margin-bottom: 1rem;
@@ -294,7 +297,7 @@ b{
 					color:$mainFontColor;
 					transform:translateX(3rem);
 					opacity: 0;
-					transition: all 0.3s $easeCustom;
+					transition: all 0.5s $easeCustom;
 					display: inline-block;
 					&::after{
 						content: '';
@@ -376,6 +379,13 @@ b{
 			}
 		}
 	}
+	.contactModal{
+		position: fixed;
+		width: 100vw;
+		height: calc(100% - 8em);
+		margin: 8em 0 0;
+		background: rgba(158,167,161,0.9);
+	}
 }
 #gardenLogo{
 	padding: 1rem;
@@ -456,7 +466,7 @@ b{
 						overflow: hidden;
 						img{
 							width: 100%;
-							min-height: 200px;
+							min-height: 100px;
 							filter: grayscale(100%);
 							opacity: 0.8;
 							border: 1px solid $lineColor;
@@ -533,6 +543,7 @@ b{
 		display: block;
 		padding: 2rem 0;
 		text-align: center;
+		animation: appear 1s $easeCustom;
 	}
 	.slogan{
 		opacity: 1;
@@ -586,6 +597,14 @@ b{
 					animation: 1s horizon_appear $easeCustom;
 				}
 			}
+			transition: all 0.5s $easeCustom;
+			opacity: 1;
+			transform: translateX(0);
+			@for $i from 1 through 6{
+				&:nth-child(#{$i}){
+					transition-delay: 0.1s * $i;
+				}
+			}
 		}
 	}
 }
@@ -605,8 +624,14 @@ b{
 			transform: translateX(-1rem);
 			opacity: 0;
 		}
+		.historyColm{
+			.itemWrap{
+				opacity: 0;
+				transform: translateX(-1rem);
+			}
+		}
 	}
-	.container.indexPage .slogan{
+	.container .slogan{
 		opacity: 0;
 	}
 }

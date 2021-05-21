@@ -8,7 +8,7 @@
     -->
     <Worklist apiUrl="https://api.design-garden.shop/posts" orderKey="publishingDate" :postLimit="4" />
     <div class="moreBtn bottom_line">
-      <nuxt-link to="/works" class="hoverLine">more Works</nuxt-link>
+      <nuxt-link to="/works" class="hoverLine">more Works +</nuxt-link>
     </div>
     <Slogan :sloganText="sloganMessage" />
   </div>
