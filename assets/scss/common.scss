@@ -534,6 +534,10 @@ b{
 		padding: 2rem 0;
 		text-align: center;
 	}
+	.slogan{
+		opacity: 1;
+		transition: all 0.5s $easeCustom;
+	}
 }
 //////////////////// 인덱스 컨테이너 끝
 //////////////////// 어바웃 컨테이너
@@ -596,11 +600,13 @@ b{
 //////////////////// 컨택트 컨테이너 끝
 //////////////////// 로딩 애니메이션
 .loading{
-	.container.indexPage .postWrap .item .itemWrap span{
-		transform: translateX(-1rem);
-		opacity: 0;
+	.container{
+		.postWrap .item .itemWrap span{
+			transform: translateX(-1rem);
+			opacity: 0;
+		}
 	}
-	.slogan{
+	.container.indexPage .slogan{
 		opacity: 0;
 	}
 }
