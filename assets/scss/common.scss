@@ -541,7 +541,7 @@ b{
 	.moreBtn{
 		width: 100%;
 		display: block;
-		padding: 2rem 0;
+		padding: 1rem 0;
 		text-align: center;
 		animation: appear 1s $easeCustom;
 	}
@@ -940,7 +940,7 @@ b{
 	.footer{
 		flex-direction: column;
 		.info{
-			padding: 2rem 1rem;
+			padding: 1rem 1rem;
 			.sns{
 				margin-bottom: 0;
 			}
@@ -950,7 +950,7 @@ b{
 		}
 		.essay{
 			max-width: 100%;
-			padding: 2rem 1rem;
+			padding: 1rem 1rem;
 		}
 		.slogan{
 			width: 100%;
@@ -959,6 +959,10 @@ b{
 			.copyText{
 			}
 		}
+	}
+	.marquee{
+		height: 5.5rem;
+		overflow: hidden;
 	}
 }
 //////////////////// 모바일 시작 끝
