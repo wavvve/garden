@@ -53,7 +53,8 @@ $lineColor: #8a978e;
 $iconColor: #78867c;
 $mainFontColor: #192d20;
 $subFontColor: #3a5845;
-$bgColor: #9ea7a1;
+// 이전값 $bgColor: #9ea7a1;
+$bgColor: #bebfbf;
 $easeCustom: cubic-bezier(0.975, 0.105, 0.555, 0.975);
 html, body{
     font-family: 'Noto Sans KR', sans-serif;
@@ -235,7 +236,7 @@ b{
 		&.open{
 			opacity: 1;
 			pointer-events: all;
-			background: rgba(158,167,161,0.9);
+			background: rgba(190,191,191,0.9);
 			.mainMenu{
 				li{
 					a{
@@ -465,6 +466,7 @@ b{
 						font-size: 0;
 						overflow: hidden;
 						img{
+							cursor: pointer;
 							width: 100%;
 							min-height: 100px;
 							filter: grayscale(100%);
@@ -510,6 +512,7 @@ b{
 						font-size: 0;
 						display: block;
 						span{
+							cursor: pointer;
 							display: inline-block;
 							font-size: 0.8rem;
 							font-weight: 700;
@@ -561,10 +564,44 @@ b{
 		width: 50%;
 	}
 	.aboutColm{
-		width: 50%;
+		width: 30%;
+		position: relative;
+		.aboutGraphic{
+			width: 100%;
+			min-height: calc(100vh - 20rem);
+			font-size: 0;
+			position: sticky;
+			top:9rem;
+			transition: all 0.5s $easeCustom;
+			opacity: 1;
+			transform: translateX(0);
+			&:nth-child(1){ z-index: 101; 
+				.aboutCopy{ margin-left: 0; }
+			}
+			&:nth-child(2){ z-index: 104; 
+				.aboutCopy{ margin-left: 25%; }
+			}
+			&:nth-child(3){ z-index: 103; 
+				.aboutCopy{ margin-left: 50%; }
+			}
+			&:nth-child(4){ z-index: 102; 
+				.aboutCopy{ margin-left: 75%; text-align: right; padding-right: 0; }
+			}
+			.aboutCopy{
+				font-size: 1rem;
+				color: $subFontColor;
+				margin: 1rem 0 4rem;
+				display: inline-block;
+				width: 25%;
+				box-sizing: border-box;
+				padding-right: 1rem;
+				line-height: 1.5rem;
+			}
+		}
 	}
 	.historyColm{
 		flex-grow: 1;
+		padding-bottom: 100vh;
 		.itemWrap{
 			padding-bottom: 1rem;
 			margin-bottom: 1rem;
@@ -623,6 +660,12 @@ b{
 		.postWrap .item .itemWrap span{
 			transform: translateX(-1rem);
 			opacity: 0;
+		}
+		.aboutColm{
+			.aboutGraphic{
+				opacity: 0;
+				transform: translateX(-1rem);
+			}
 		}
 		.historyColm{
 			.itemWrap{
@@ -848,6 +891,41 @@ b{
 		padding: 5.7rem 0 0;
 		width: 100%;
 		min-height: calc(100vh - 5.7rem);
+		.aboutColm{
+			width: 50%;
+			.aboutGraphic{
+				top: 6.8rem;
+				height: 80vh;
+				.aboutCopy{
+					width: 100%;
+				}
+				&:nth-child(1){ z-index: 101; 
+					.aboutCopy{ 
+						margin-left: 0; 
+						margin-top: 1rem;
+					}
+				}
+				&:nth-child(2){ z-index: 104; 
+					.aboutCopy{ 
+						margin-left: 0; 
+						margin-top: 6rem;
+					}
+				}
+				&:nth-child(3){ z-index: 103; 
+					.aboutCopy{ 
+						margin-left: 0; 
+						margin-top: 11rem;
+					}
+				}
+				&:nth-child(4){ z-index: 102; 
+					.aboutCopy{ 
+						margin-left: 0; 
+						margin-top: 16rem;
+						text-align: left;
+					}
+				}
+			}
+		}
 		.historyColm{
 			.itemWrap {
 				font-size: 0.7rem;

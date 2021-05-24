@@ -1,7 +1,10 @@
 <template>
     <div class="container aboutWrap">
         <div class="aboutColm vertical_line">
-            어바웃 그래픽을 어떻게 할까요.
+            <div class="aboutGraphic" v-for="item in aboutGraphic" v-bind:key="item.key">
+                <img class="aboutImg" :src="'https://api.design-garden.shop'+item.svg[0].url">
+                <span class="aboutCopy">{{ item.text }}</span>
+            </div>
         </div>
         <div class="historyColm">
             <ul class="itemWrap bottom_line" v-for="item in orderedhistory" v-bind:key="item.id">
@@ -33,8 +36,8 @@ export default {
     },
     async asyncData({ $http }) {
       const gardenHistory = await $http.$get(`https://api.design-garden.shop/histories`)
-      console.log(gardenHistory)
-      return { gardenHistory }
+      const aboutGraphic = await $http.$get(`https://api.design-garden.shop/about-grapgics?_sort=id:ASC`)
+      return { gardenHistory, aboutGraphic }
     },
     methods: {
         handleNewLine(str) {    
