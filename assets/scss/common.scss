@@ -247,9 +247,6 @@ b{
 							letter-spacing: 0.5rem;
 						}
 						position: relative;
-						&:hover::after{
-							transform: scaleX(1);
-						}
 					}
 					a.nuxt-link-active{
 						color: #7c8a80;
@@ -564,7 +561,7 @@ b{
 		width: 50%;
 	}
 	.aboutColm{
-		width: 30%;
+		width: 40%;
 		position: relative;
 		.aboutGraphic{
 			width: 100%;
@@ -970,6 +967,9 @@ b{
 	.header_nav .header_menuBtn:hover li:nth-child(1),
 	.header_nav .header_menuBtn:hover li:nth-child(3) {
 		top: 4em;
+	}
+	.header_nav .modalMenu .mainMenu li a:hover::after{
+		transform: scaleX(1);
 	}
 }
 //////////////////// 호버 예외 끝
