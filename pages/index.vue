@@ -1,11 +1,10 @@
 <template>
   <div class="container indexPage">
-    <!-- 인트로 페이지
     <article class="introPage bottom_line">
-      <div class="img_box">        
+      <div class="img_box">
+        <img :src="'https://api.design-garden.shop' + mainImgs[0].img[0].url">
       </div>
     </article>
-    -->
     <Worklist apiUrl="https://api.design-garden.shop/posts" orderKey="publishingDate" :postLimit="4" />
     <div class="moreBtn bottom_line">
       <nuxt-link to="/works" class="hoverLine">more Works +</nuxt-link>
@@ -24,6 +23,10 @@ export default {
     return {
       sloganMessage: "Slow walk, Glow work.",
     }
+  },
+  async asyncData({ $http }){
+    const mainImgs = await $http.$get('https://api.design-garden.shop/main-imgs')
+    return { mainImgs }
   },
 }
 </script>

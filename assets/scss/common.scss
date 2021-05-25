@@ -413,7 +413,15 @@ b{
 .container.indexPage, .container.worksWrap{
 	.introPage{
 		width: 100%;
-		min-height: calc(100vh - 8em);
+		padding: 1rem;
+		box-sizing: border-box;
+		.img_box{
+			font-size: 0;
+			border: 1px solid $lineColor;
+			img{
+				width: 100%;
+			}
+		}
 	}
 	.postWrap{
 		display: flex;
