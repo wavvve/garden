@@ -5,7 +5,7 @@
         <img :src="'https://api.design-garden.shop' + mainImgs[0].img[0].url">
       </div>
     </article>
-    <Worklist apiUrl="https://api.design-garden.shop/posts" orderKey="publishingDate" :postLimit="4" />
+    <Worklist apiUrl="https://api.design-garden.shop/posts" :postLimit="4" />
     <div class="moreBtn bottom_line">
       <nuxt-link to="/works" class="hoverLine">more Works +</nuxt-link>
     </div>

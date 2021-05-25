@@ -410,14 +410,24 @@ b{
 .container{
 	min-height: calc(100vh - 8em);
 }
+.container.indexPage, .container.worksWrap {
+	.marquee{
+		color: $lineColor;
+		height: 5.5rem;
+		.track{
+			.content{
+				margin-top:0;
+			}
+		}
+	}
+}
 .container.indexPage, .container.worksWrap{
 	.introPage{
 		width: 100%;
-		padding: 1rem;
+		padding: 0;
 		box-sizing: border-box;
 		.img_box{
 			font-size: 0;
-			border: 1px solid $lineColor;
 			img{
 				width: 100%;
 			}
