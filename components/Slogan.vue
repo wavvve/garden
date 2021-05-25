@@ -39,7 +39,12 @@ export default {
         font-weight: 100;
         margin-top: 2rem;
     }
-
+    .mobile .marquee{
+        height: 5.5rem;
+    }
+    .mobile .content{
+        margin-top: 0;
+    }
     @keyframes marquee {
         from { transform: translateX(0); }
         to { transform: translateX(-49.5%); }
