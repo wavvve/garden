@@ -544,6 +544,9 @@ b{
 		padding: 1rem 0;
 		text-align: center;
 		animation: appear 1s $easeCustom;
+		a{
+			padding-bottom:0.1rem;
+		}
 	}
 	.slogan{
 		opacity: 1;

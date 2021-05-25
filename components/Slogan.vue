@@ -25,7 +25,7 @@ export default {
         width: 100vw;
         max-width: 100%;
         height: 11rem;
-        overflow-x: hidden;
+        overflow: hidden;
     }
     .track {
         position: absolute;
