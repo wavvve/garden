@@ -128,6 +128,24 @@ export default {
                     this.modalContactState = false
                 }
             })
+            fetch('https://api.design-garden.shop/contacts', {
+                method : 'POST',
+                body : JSON.stringify({
+                    name : this.contactName,
+                    email : this.contactEmail,
+                    tell : this.contactTel,
+                    content : this.contactContent,
+                }),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => res.json())
+            .then(res => {
+                if(res.error){
+                    alert(res.error);
+                }
+            })
         }
     }
 }

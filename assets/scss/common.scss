@@ -426,6 +426,8 @@ b{
 					font-family: 'Noto Sans KR', sans-serif;
 					color: $subFontColor;
 					padding: 1rem;
+					-webkit-appearance: none;
+					-webkit-border-radius: 0;
 					&:focus{
 						outline: none;
 					}
