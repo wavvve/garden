@@ -124,6 +124,8 @@ export default {
             .then(res => {
                 if(res.error){
                     alert(res.error);
+                }else{
+                    this.modalContactState = false
                 }
             })
         }
