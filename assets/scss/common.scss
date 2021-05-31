@@ -49,7 +49,7 @@ table {
 //////////////////// 리셋끝
 
 //////////////////// 공용세팅
-$lineColor: #8a978e;
+$lineColor: #94a198;
 $iconColor: #78867c;
 $mainFontColor: #192d20;
 $subFontColor: #3a5845;
@@ -495,7 +495,7 @@ b{
 //////////////////// 메인 컨테이너
 .container{
 	padding:  8rem 0 0;
-	min-height: calc(100vh - 8rem);
+	min-height: calc(100vh - 10rem);
 	h1{
 		font-size: 10rem;
 		font-weight: 100;
@@ -503,10 +503,7 @@ b{
 }
 //////////////////// 메인 컨테이너 끝
 //////////////////// 인덱스 컨테이너 // 워크랩 공용
-.container{
-	min-height: calc(100vh - 8em);
-}
-.container.indexPage, .container.worksWrap {
+.container.indexPage, .container.worksWrap, .container.gardenerWrap {
 	.marquee{
 		color: $lineColor;
 		height: 5.5rem;
@@ -517,7 +514,7 @@ b{
 		}
 	}
 }
-.container.indexPage, .container.worksWrap{
+.container.indexPage, .container.worksWrap, .container.gardenerWrap{
 	.introPage{
 		width: 100%;
 		padding: 0;
@@ -534,6 +531,7 @@ b{
 		flex-direction: row;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		min-height: calc(100vh - 23.5rem);
 		li{
 			width: 20%;
 			min-width: 150px;
@@ -585,6 +583,7 @@ b{
 							border: 1px solid $lineColor;
 							box-sizing: border-box;
 							transition: all 0.5s $easeCustom;
+							animation: img_color 3s $easeCustom;
 							&:hover{
 								filter: grayscale(0);
 								opacity: 1;
@@ -679,6 +678,7 @@ b{
 	}
 	.aboutColm{
 		width: 40%;
+		max-width: 600px;
 		position: relative;
 		.aboutGraphic{
 			width: 100%;
@@ -704,7 +704,7 @@ b{
 			.aboutCopy{
 				font-size: 1rem;
 				color: $subFontColor;
-				margin: 1rem 0 4rem;
+				margin: 1rem 0 2rem;
 				display: inline-block;
 				width: 25%;
 				box-sizing: border-box;
@@ -960,6 +960,12 @@ b{
 		transform: translateY(0);
 	}
 }
+
+@keyframes img_color {
+	0%{
+		filter: grayscale(0);
+	}
+}
 //////////////////// 애니메이션 키프레임 끝
 //////////////////// 모바일 시작
 .mobile{
@@ -994,7 +1000,7 @@ b{
 			}
 		}
 	}
-	.container.indexPage, .container.worksWrap{
+	.container.indexPage, .container.worksWrap, .container.gardenerWrap{
 		padding: 5.7rem 0 0;
 		width: 100%;
 		min-height: calc(100vh - 5.7rem);
@@ -1087,6 +1093,9 @@ b{
 			flex-basis: auto;
 			padding: auto;
 			.copyText{
+			}
+			.graphic span{
+				border-radius: calc(100% - 7rem)/2rem;
 			}
 		}
 	}

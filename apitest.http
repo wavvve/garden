@@ -1,0 +1,4 @@
+GET https://api.design-garden.shop/posts?_limit=1
+
+###
+
