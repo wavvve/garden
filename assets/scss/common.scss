@@ -615,13 +615,13 @@ b{
 					height: 100%;
 					position: relative;
 					padding-bottom: 5rem;
-					.category{
+					.category, .link{
 						position: absolute;
 						bottom: 1rem;
 						left: 1rem;
 						font-size: 0;
 						display: block;
-						span{
+						span, a{
 							cursor: pointer;
 							display: inline-block;
 							font-size: 0.8rem;
@@ -636,6 +636,10 @@ b{
 								color: $bgColor;
 							}
 						}
+					}
+					.link{
+						left: auto ;
+						right: 1rem;
 					}
 				}
 			}

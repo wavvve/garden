@@ -11,7 +11,10 @@
             {{ item.publishingDate }}
             </span>
             <span class="category" v-if="item.categories">
-            <span v-for="category in item.categories" v-bind:key="category.id">{{ category.category }}</span>
+              <span v-for="category in item.categories" v-bind:key="category.id">{{ category.category }}</span>
+            </span>
+            <span class="link" v-if="item.link">
+              <a :href="item.link" target="_blank">Go+</a>
             </span>
         </div>
         </li>
@@ -39,6 +42,10 @@ export default {
       postLimit:{
           type: Number,
           default: -1,
+      },
+      listType:{
+        type: String,
+        default: "works"
       }
   },
   async fetch() {

@@ -9,6 +9,10 @@
     <div class="moreBtn bottom_line">
       <nuxt-link to="/works" class="hoverLine">more Works +</nuxt-link>
     </div>
+    <Worklist apiUrl="https://api.design-garden.shop/botlists" :postLimit="4" />
+    <div class="moreBtn bottom_line">
+      <nuxt-link to="/gardener" class="hoverLine">more gardener +</nuxt-link>
+    </div>
     <Slogan :sloganText="sloganMessage" />
   </div>
 </template>
