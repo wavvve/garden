@@ -26,14 +26,14 @@ export default {
   data() {
     return {
       postLists: [],
-      apiSeverUrl: "https://api.design-garden.shop",
+      apiSeverUrl: "https://api.pinsquare.synology.me",
       sloganMessage: "Slow walk, Glow work.",
     }
   },
   props:{
       apiUrl: {
           type: String,
-          default: 'https://api.design-garden.shop/posts',
+          default: 'https://api.pinsquare.synology.me/posts',
       },
       orderKey: {
           type: String,

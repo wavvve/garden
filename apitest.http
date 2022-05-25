@@ -1,4 +1,4 @@
-GET https://api.design-garden.shop/posts?_limit=1
+GET https://api.pinsquare.synology.me/posts?_limit=1
 
 ###
 

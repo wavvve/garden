@@ -128,7 +128,7 @@ export default {
                     this.modalContactState = false
                 }
             })
-            fetch('https://api.design-garden.shop/contacts', {
+            fetch('https://api.pinsquare.synology.me/contacts', {
                 method : 'POST',
                 body : JSON.stringify({
                     name : this.contactName,

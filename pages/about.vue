@@ -2,7 +2,7 @@
     <div class="container aboutWrap">
         <div class="aboutColm vertical_line">
             <div class="aboutGraphic" v-for="item in aboutGraphic" v-bind:key="item.key">
-                <img class="aboutImg" :src="'https://api.design-garden.shop'+item.svg[0].url">
+                <img class="aboutImg" :src="'https://api.pinsquare.synology.me'+item.svg[0].url">
                 <span class="aboutCopy">{{ item.text }}</span>
             </div>
         </div>
@@ -35,8 +35,8 @@ export default {
         }
     },
     async asyncData({ $http }) {
-      const gardenHistory = await $http.$get(`https://api.design-garden.shop/histories`)
-      const aboutGraphic = await $http.$get(`https://api.design-garden.shop/about-grapgics?_sort=id:ASC`)
+      const gardenHistory = await $http.$get(`https://api.pinsquare.synology.me/histories`)
+      const aboutGraphic = await $http.$get(`https://api.pinsquare.synology.me/about-grapgics?_sort=id:ASC`)
       return { gardenHistory, aboutGraphic }
     },
     methods: {

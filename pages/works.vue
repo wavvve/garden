@@ -1,6 +1,6 @@
 <template>
   <div class="container worksWrap">
-    <Worklist apiUrl="https://api.design-garden.shop/posts" orderKey="publishingDate" />
+    <Worklist apiUrl="https://api.pinsquare.synology.me/posts" orderKey="publishingDate" />
     <Slogan :sloganText="sloganMessage" />
   </div>
 </template>

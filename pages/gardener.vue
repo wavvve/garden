@@ -1,6 +1,6 @@
 <template>
     <div class="container gardenerWrap">
-        <Worklist apiUrl="https://api.design-garden.shop/botlists" orderKey="id" />
+        <Worklist apiUrl="https://api.pinsquare.synology.me/botlists" orderKey="id" />
         <Slogan :sloganText="sloganMessage" />
     </div>
 </template>
